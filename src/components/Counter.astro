@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+
+let counter = 0
+---
+
+<div>
+  <h2>{title}</h2>
+  <counter-astro
+    ><div>
+      <button id='plusBtn'>+</button>
+      <span id='counter'>{counter}</span>
+      <button id='minusBtn'>-</button>
+    </div></counter-astro
+  >
+</div>
+
+<script>
+  class Counter extends HTMLElement {
+    constructor() {
+      super()
+      let count = 0
+
+      const plusBtn = document.getElementById('plusBtn')
+      const minusBtn = document.getElementById('minusBtn')
+      const countSpan = this.querySelector('span')
+
+      plusBtn?.addEventListener('click', (e) => {
+        count += 1
+
+        if (countSpan) {
+          countSpan.textContent = count.toString()
+        }
+      })
+
+      minusBtn?.addEventListener('click', (e) => {
+        count -= 1
+
+        if (countSpan) {
+          countSpan.textContent = count.toString()
+        }
+      })
+    }
+  }
+
+  customElements.define('counter-astro', Counter)
+</script>
