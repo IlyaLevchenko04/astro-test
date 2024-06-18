@@ -1,0 +1,20 @@
+---
+import s from './Section.module.css'
+
+interface Props {
+  bgColor?: 'white' | 'black' | 'brand' | 'light04'
+}
+
+const colors = {
+  white: '#fff',
+  black: '#000',
+  brand: '#F8CC37',
+  light04: '#F2F2F7',
+}
+
+const { bgColor = 'white' } = Astro.props
+---
+
+<section class={s.root} style=`background-color: ${colors[bgColor]};`>
+  <slot />
+</section>
