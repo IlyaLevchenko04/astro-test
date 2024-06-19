@@ -1,7 +1,14 @@
 ---
+import cn from 'classnames'
 import s from './Container.module.css'
+
+interface Props {
+  className?: string
+}
+
+const { className = '' } = Astro.props
 ---
 
-<div class={s.container}>
+<div class={cn(s.container, className)}>
   <slot />
 </div>

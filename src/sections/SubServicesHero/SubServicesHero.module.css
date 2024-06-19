@@ -1,0 +1,11 @@
+.btn:hover {
+  background-color: #f1bd0f;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  max-width: 720px;
+}

@@ -4,16 +4,19 @@ import Layout from '../layouts/Layout.astro'
 import Counter from '../components/Counter.astro'
 import Container from '../components/Container/Container.astro'
 import Section from '../components/Section/Section.astro'
+import SubServicesHero from 'src/sections/SubServicesHero/SubServicesHero.astro'
 const title = 'Hello world!'
+const description =
+  "Lampa.dev, an Internet of things app development company, is your reliable, innovative partner. If you want to implement your own project, launch a brand-new product into the market, or enhance an existing one, you'll need appropriate software. IoT solutions and services offer the opportunity to connect device hardware through powerful digital infrastructure, providing remote control, data exchange, and partial automation, possibly even with AI. Internet of Things development is one of Lampa.dev's priority areas. Therefore, we'll ensure your IoT devices have maximum operational and functional capabilities."
 ---
 
 <Layout title='Welcome to Astro.'>
   <main>
-    <Section bgColor='brand'>
-      <Container
-        ><h1>{title}</h1>
-        <Counter title='Counter' /></Container
-      >
-    </Section>
+    <SubServicesHero
+      title='IoT Application Development Company'
+      description={description}
+      buttonText='Start your project'
+      bgColor='brand'
+    />
   </main>
 </Layout>

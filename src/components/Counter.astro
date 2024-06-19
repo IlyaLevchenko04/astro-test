@@ -4,8 +4,6 @@ interface Props {
 }
 
 const { title } = Astro.props
-
-let counter = 0
 ---
 
 <div>
@@ -13,7 +11,7 @@ let counter = 0
   <counter-astro>
     <div>
       <button id='plusBtn'>+</button>
-      <span id='counter'>{counter}</span>
+      <span id='counter'>0</span>
       <button id='minusBtn'>-</button>
     </div>
   </counter-astro>

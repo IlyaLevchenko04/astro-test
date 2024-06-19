@@ -1,0 +1,32 @@
+---
+import cn from 'classnames'
+
+import Section from 'src/components/Section/Section.astro'
+import Container from 'src/components/Container/Container.astro'
+import Button from 'src/components/Button/Button.astro'
+import Breadcrumbs from 'src/components/Breadcrumbs/Breadcrumbs.astro'
+
+import s from './SubServicesHero.module.css'
+
+interface Props {
+  title: string
+  description: string
+  buttonText: string
+  bgColor?: 'white' | 'black' | 'brand' | 'light04'
+}
+
+const { title, description, buttonText, bgColor = 'white' } = Astro.props
+
+const breadcrumbs = ['Main', 'Solutions', 'IoT Application Development Company']
+---
+
+<Section bgColor={bgColor}>
+  <Container>
+    <div class={s.container}>
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <Button className={s.btn} fullWidth={true} bgColor='black'>{buttonText}</Button>
+    </div>
+  </Container>
+</Section>

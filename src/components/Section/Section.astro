@@ -1,8 +1,10 @@
 ---
+import cn from 'classnames'
 import s from './Section.module.css'
 
 interface Props {
   bgColor?: 'white' | 'black' | 'brand' | 'light04'
+  className?: string
 }
 
 const colors = {
@@ -12,9 +14,9 @@ const colors = {
   light04: '#F2F2F7',
 }
 
-const { bgColor = 'white' } = Astro.props
+const { bgColor = 'white', className = '' } = Astro.props
 ---
 
-<section class={s.root} style=`background-color: ${colors[bgColor]};`>
+<section class={cn(s.root, className)} style=`background-color: ${colors[bgColor]};`>
   <slot />
 </section>
